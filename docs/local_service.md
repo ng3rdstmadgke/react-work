@@ -150,7 +150,7 @@ docker logs -f ${CONTAINER_NAME}
 ### 管理画面へのアクセス
 
 - ポートフォワーディング 
-  - `devcontainer-template-sample-rabbitmq:15672`
+  - `react-work-sample-rabbitmq:15672`
 - 管理画面: http://localhost:15672
   - user: `app`
   - password: `pass1234`

@@ -7,11 +7,11 @@
    * プロパティ: https://containers.dev/implementors/json_reference/#general-properties
    */
   // UIに表示するdevcontainerの名前
-  "name": "devcontainer-template",
+  "name": "react-work",
 
    // コンテナの環境変数設定
   "containerEnv": {
-      "PROJECT_NAME": "devcontainer-template",
+      "PROJECT_NAME": "react-work",
       // devcontainerのID
       "DEVCONTAINER_ID": "${devcontainerId}",
       // ホスト側のプロジェクトディレクトリ
@@ -21,7 +21,7 @@
       // ホスト側のユーザー名
       "HOST_USER": "${localEnv:USER}",
       // devcontainerが所属するネットワーク名
-      "DOCKER_NETWORK": "br-devcontainer-template-${localEnv:USER}"
+      "DOCKER_NETWORK": "br-react-work-${localEnv:USER}"
   },
 
   "forwardPorts": [
@@ -34,8 +34,8 @@
       "source=${localEnv:HOME}/.claude/,target=/home/vscode/.claude/,type=bind,consistency=cached",
       "source=${localEnv:HOME}/.claude.json,target=/home/vscode/.claude.json,type=bind,consistency=cached",
       "source=${localEnv:HOME}/.gemini/,target=/home/vscode/.gemini/,type=bind,consistency=cached",
-      "source=${localEnv:HOME}/.devcontainer-template/.kube/,target=/home/vscode/.kube/,type=bind,consistency=cached",
-      "source=${localEnv:HOME}/.devcontainer-template/.config/helm/,target=/home/vscode/.config/helm/,type=bind,consistency=cached"
+      "source=${localEnv:HOME}/.react-work/.kube/,target=/home/vscode/.kube/,type=bind,consistency=cached",
+      "source=${localEnv:HOME}/.react-work/.config/helm/,target=/home/vscode/.config/helm/,type=bind,consistency=cached"
   ],
 
   // devcontainerに追加する機能の定義
@@ -60,7 +60,7 @@
 
   // devcontainer 起動時の docker run のオプション
   "runArgs": [
-    "--network=br-devcontainer-template-${localEnv:USER}"
+    "--network=br-react-work-${localEnv:USER}"
   ],
 
 
