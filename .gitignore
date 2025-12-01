@@ -9,4 +9,5 @@ terraform/.terraform/
 **/backend.hcl
 
 node_modules/
+dist/
 .pnpm-store/
