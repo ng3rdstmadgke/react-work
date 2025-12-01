@@ -4,4 +4,4 @@ const main = () => {
   hello();
 }
 
-main();
+(window as any).MyApp = { main, hello };

@@ -7,4 +7,4 @@ function hello() {
 var main = () => {
   hello();
 };
-main();
+window.MyApp = { main, hello };

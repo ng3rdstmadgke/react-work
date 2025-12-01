@@ -1,4 +1,4 @@
-import { hello } from "./lib";
+import { hello } from "./lib.js";
 
 const main = () => {
   hello();
