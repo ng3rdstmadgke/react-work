@@ -119,7 +119,10 @@
 
         // Others
         "ms-vscode.makefile-tools",
-        "ms-azuretools.vscode-docker"
+        "ms-azuretools.vscode-docker",
+
+        // TypeScript / React
+        "prisma.prisma"
       ]
     }
   }
