@@ -25,7 +25,7 @@ export default async function Post({ params }: {params: Promise<{id: string}>}) 
           {
             post.tags.map((tag) => {
               return (
-                <li>{tag.name}</li>
+                <li key={tag.id}>{tag.name}</li>
               )
             })
           }
