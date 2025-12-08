@@ -100,6 +100,10 @@ RUN curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - && \
 # https://github.com/google-gemini/gemini-cli
 RUN npm install -g @google/gemini-cli
 
+# Google Chrome インストール
+RUN wget -q  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    apt install -y ./google-chrome-stable_current_amd64.deb
+
 USER vscode
 
 # Claude Code CLI インストール
@@ -112,3 +116,7 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no
 
 # pnpm
 RUN export SHELL=/bin/bash && curl -fsSL https://get.pnpm.io/install.sh | sh -
+
+# DuckDB インストール
+# https://duckdb.org/install/?platform=macos&environment=cli
+RUN curl https://install.duckdb.org | sh

@@ -11,3 +11,10 @@ terraform/.terraform/
 node_modules/
 dist/
 .pnpm-store/
+
+# AI
+.claude/
+.gemini/
+.serena/
+.playwright-mcp/
+core
