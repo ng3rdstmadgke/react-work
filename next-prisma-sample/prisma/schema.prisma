@@ -25,6 +25,16 @@ model Post {
   title     String
   content   String?
   published Boolean @default(false)
-  author    User    @relation(fields: [authorId], references: [id])
   authorId  Int
+  // 1対多のリレーション: https://www.prisma.io/docs/orm/prisma-schema/data-model/relations/one-to-many-relations
+  author    User    @relation(fields: [authorId], references: [id])
+  // 暗黙的な多対多リレーション: https://www.prisma.io/docs/orm/prisma-schema/data-model/relations/many-to-many-relations#implicit-many-to-many-relations
+  tags      Tag[]
+}
+
+model Tag {
+  id        Int    @id @default(autoincrement())
+  name      String @unique
+  // 暗黙的な多対多リレーション: https://www.prisma.io/docs/orm/prisma-schema/data-model/relations/many-to-many-relations#implicit-many-to-many-relations
+  posts     Post[]
 }

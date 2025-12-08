@@ -6,7 +6,8 @@ export default async function Post({ params }: {params: Promise<{id: string}>}) 
   const post = await prisma.post.findUnique({
     where: {id: parseInt(id)},
     include: {
-      author: true
+      author: true,
+      tags: true
     }
 
   });
@@ -20,6 +21,16 @@ export default async function Post({ params }: {params: Promise<{id: string}>}) 
       <article className="max-w-2xl space-y-4 font-[family-name:var(--font-geist-sans)]">
         <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
         <p className="text-center">by {post.author.name}</p>
+        <ol>
+          {
+            post.tags.map((tag) => {
+              return (
+                <li>{tag.name}</li>
+              )
+            })
+          }
+
+        </ol>
         <div className="prose prose-gray mt-8">
           {post.content || "No content available."}
         </div>

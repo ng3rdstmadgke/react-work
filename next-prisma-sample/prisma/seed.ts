@@ -18,10 +18,23 @@ const userData: Prisma.UserCreateInput[] = [
           title: "Join the Prisma Discord",
           content: "https://pris.ly/discord",
           published: true,
+          tags: {
+            connectOrCreate: [
+              { where: {name: "a"}, create: {name: "a"} },
+              { where: {name: "b"}, create: {name: "b"} },
+            ]
+            
+          }
         },
         {
           title: "Prisma on YouTube",
           content: "https://pris.ly/youtube",
+          tags: {
+            connectOrCreate: [
+              { where: {name: "b"}, create: {name: "b"} },
+              { where: {name: "c"}, create: {name: "c"} },
+            ]
+          }
         },
       ],
     },
@@ -35,6 +48,12 @@ const userData: Prisma.UserCreateInput[] = [
           title: "Follow Prisma on Twitter",
           content: "https://www.twitter.com/prisma",
           published: true,
+          tags: {
+            connectOrCreate: [
+              { where: {name: "c"}, create: {name: "c"} },
+              { where: {name: "d"}, create: {name: "d"} },
+            ]
+          }
         },
       ],
     },

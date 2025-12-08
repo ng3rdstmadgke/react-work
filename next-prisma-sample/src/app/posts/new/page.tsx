@@ -9,12 +9,21 @@ export default async function NewPost() {
 
     const title = formData.get("title") as string;
     const content = formData.get("content") as string;
+    const tags  = (formData.get("tags") as string).split(",").map((tag) => {
+      return tag.trim()
+    })
 
     await prisma.post.create({
       data: {
         title: title,
         content: content,
         authorId: 1,
+        tags: {
+          connectOrCreate: tags.map((tag) => {
+            return {where: {name: tag}, create: {name: tag}}
+          })
+            
+        }
       }
     })
 
@@ -35,6 +44,18 @@ export default async function NewPost() {
             id="title"
             name="title"
             placeholder="Enter your post title"
+            className="w-full px-4 py-2 border rounded-lg"
+          />
+        </div>
+        <div>
+          <label htmlFor="tags" className="block text-lg mb-2">
+            Tags
+          </label>
+          <input
+            type="text"
+            id="tags"
+            name="tags"
+            placeholder="Enter your post tags"
             className="w-full px-4 py-2 border rounded-lg"
           />
         </div>
