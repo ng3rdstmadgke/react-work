@@ -19,7 +19,7 @@ const userData: Prisma.UserCreateInput[] = [
           content: "https://pris.ly/discord",
           published: true,
           tags: {
-            connectOrCreate: [
+            connectOrCreate: [  // 要素を作成してリレーションを作成。要素が存在する場合はリレーションのみ作成
               { where: {name: "a"}, create: {name: "a"} },
               { where: {name: "b"}, create: {name: "b"} },
             ]
@@ -66,4 +66,5 @@ export async function main() {
   }
 }
 
+// tsx の ES Modules (ESM) モード で実行する場合、Top-level awaitが利用できる。
 main()
