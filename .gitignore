@@ -17,4 +17,5 @@ dist/
 .gemini/
 .serena/
 .playwright-mcp/
+.kiri/
 core
