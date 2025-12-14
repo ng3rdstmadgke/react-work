@@ -8,9 +8,6 @@ import { GetSessionClient } from "@/components/ui/getSessionClient"
 export default async function DashboardPage() {
   // https://www.better-auth.com/docs/plugins/bearer#5-using-bearer-tokens-outside-the-auth-client
   const session = await auth.api.getSession({ headers: await headers() });
-  if (!session) {
-    redirect("/login");
-  }
 
   return (
     <main>
