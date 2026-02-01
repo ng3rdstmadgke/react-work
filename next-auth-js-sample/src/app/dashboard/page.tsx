@@ -2,7 +2,7 @@ import { auth } from "@/auth"
 import { SignOutButton } from "@/components/ui/SignOutButton"
 
 export default async function DashboardPage() {
-  const session = await auth()
+  const session = await auth()  // サーバーコンポーネント
 
   return (
     <div className="flex min-h-screen items-center justify-center">

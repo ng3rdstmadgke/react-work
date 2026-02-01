@@ -1,7 +1,7 @@
 import NextAuth from "next-auth"
 import type { NextAuthConfig } from "next-auth"
 import Keycloak from "next-auth/providers/keycloak"
- 
+
 // NextAuthConfig: https://authjs.dev/reference/nextjs#nextauthconfig
 const config = {
   // https://authjs.dev/reference/nextjs#pages
@@ -16,7 +16,7 @@ const config = {
       clientSecret: process.env.AUTH_KEYCLOAK_SECRET!,
       issuer: process.env.AUTH_KEYCLOAK_ISSUER!,
     }),
-  ]
+  ],
 } satisfies NextAuthConfig
 
 // 認証関数（`auth`, `signIn`, `signOut`）とAPIハンドラー（`handlers`）をエクスポート
